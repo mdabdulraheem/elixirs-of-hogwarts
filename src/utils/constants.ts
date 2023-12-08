@@ -52,3 +52,15 @@ export const POTION_FILTER_OPTIONS: FilterData[] = [
         ],
     },
 ];
+
+export const SHOW_POTION_PROPERTIES = {
+    name: true,
+    difficulty: true,
+    effect: true,
+    characteristics: true,
+    inventors: true,
+    ingredients: true,
+    manufacturers: true,
+    side_effects: true,
+    time: true,
+};

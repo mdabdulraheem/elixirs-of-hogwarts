@@ -1,5 +1,4 @@
 import { Box } from '@mui/material';
-import React from 'react';
 import PotionSearch from './PotionSearch';
 import PotionList from './PotionList';
 import { getPotions } from '@/lib/apis/potions';
@@ -22,21 +21,8 @@ const index = async (props: Props) => {
     );
 
     return (
-        <Box
-            sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-            }}
-        >
-            <Box
-                sx={{
-                    display: 'flex',
-                    width: '100%',
-                    gap: 2,
-                    alignItems: 'center',
-                }}
-            >
+        <Box className="flex flex-col items-center">
+            <Box className="flex w-full gap-2 items-center">
                 <PotionSearch placeholder="Search Potions" />
                 <PotionFilter searchParams={searchParams} />
             </Box>

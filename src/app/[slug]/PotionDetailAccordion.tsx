@@ -1,4 +1,3 @@
-import React from 'react';
 import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -20,18 +19,9 @@ const PotionDetailAccordion = (props: Props) => {
         <Accordion disabled={!isArray}>
             <AccordionSummary
                 expandIcon={isArray ? <ExpandMoreIcon /> : false}
-                sx={{
-                    opacity: isArray ? ' ' : '1 !important',
-                    background: isArray ? '#f9f9f9' : '#fff',
-                }}
+                className={isArray ? ' bg-[#f9f9f9] ' : 'opacity-100 bg-white'}
             >
-                <Typography
-                    sx={{
-                        width: '33%',
-                        flexShrink: 0,
-                        textTransform: 'capitalize',
-                    }}
-                >
+                <Typography className="w-[33%] shrink-0 capitalize pr-2">
                     {name.replace('_', ' ')}
                 </Typography>
                 {!isArray && (

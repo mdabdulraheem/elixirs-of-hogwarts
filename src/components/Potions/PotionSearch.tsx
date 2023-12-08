@@ -1,6 +1,5 @@
 'use client';
 import TextField from '@mui/material/TextField';
-import React from 'react';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { debounce } from '@/utils/helper';
 
@@ -43,7 +42,7 @@ const PotionSearch = (props: Props) => {
             variant="outlined"
             onChange={debouncedHandleSearch}
             defaultValue={searchParams.get('query')?.toString()}
-            sx={{ flex: '1' }}
+            className="flex-1"
             color="primary"
         />
     );

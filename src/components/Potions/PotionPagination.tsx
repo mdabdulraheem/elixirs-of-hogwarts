@@ -1,5 +1,5 @@
 'use client';
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { Pagination } from '@mui/material';
 
@@ -32,7 +32,7 @@ const PotionPatination = (props: Props) => {
             count={totalPages}
             page={currentPage}
             onChange={handleChange}
-            sx={{ paddingY: '1.5rem' }}
+            className="py-[1.5rem]"
             color="primary"
         />
     );

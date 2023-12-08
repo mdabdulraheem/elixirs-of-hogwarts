@@ -10,20 +10,12 @@ export default function Error({
     reset: () => void;
 }) {
     useEffect(() => {
-        console.error(error);
+        console.error('Error:: ', error);
     }, [error]);
 
     return (
         <div>
-            <Box
-                sx={{
-                    width: '100%',
-                    height: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                }}
-            >
+            <Box className="w-full h-full flex items-center justify-center">
                 <Typography color="warn">
                     Oops, something went wrong.
                 </Typography>

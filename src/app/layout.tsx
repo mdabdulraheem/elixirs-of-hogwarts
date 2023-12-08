@@ -21,19 +21,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body
-                className={inter.className}
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    minHeight: '100vh',
-                }}
-            >
+            <body className={inter.className + ' flex flex-col min-h-[100vh]'}>
                 <Header />
-                <Container
-                    component="main"
-                    sx={{ flex: '1', paddingTop: '1.5rem' }}
-                >
+                <Container className="flex-1 pt-[1.5rem]" component="main">
                     {children}
                 </Container>
                 <Footer />

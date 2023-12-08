@@ -1,8 +1,8 @@
-import React from 'react';
 import { getPotionDetails } from '@/lib/apis/potions';
 import { Box, Button } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import PotionDetailAccordion from './PotionDetailAccordion';
+import { SHOW_POTION_PROPERTIES } from '@/utils/constants';
 
 type Props = { params: { slug: string } };
 
@@ -18,15 +18,8 @@ const page = async (props: Props) => {
         return <div>Something went wrong. Please refresh the page.</div>;
 
     return (
-        <Box
-            sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexDirection: 'column',
-            }}
-        >
-            <Typography variant="h4" fontWeight={'bold'}>
+        <Box className="flex items-center justify-center flex-col">
+            <Typography variant="h4" className="font-bold">
                 {potionDetails.name}
             </Typography>
 
@@ -34,10 +27,7 @@ const page = async (props: Props) => {
                 component="img"
                 src={potionDetails.image}
                 alt={potionDetails.name}
-                sx={{
-                    marginY: '1.5rem',
-                    boxShadow: '0 0 10px lightgray',
-                }}
+                className="my-[1.5rem] shadow-[0 0 10px lightgray] shadow-xl"
             />
 
             <Button
@@ -49,9 +39,12 @@ const page = async (props: Props) => {
                 Link to Wiki
             </Button>
 
-            <Box sx={{ marginY: '1.5rem', width: '100%', maxWidth: '800px' }}>
+            <Box className="my-[1.5rem] w-full max-w-[800px]">
                 {Object.entries(potionDetails).map(([key, value], index) => {
-                    if (['slug', 'image', 'wiki'].includes(key)) return null;
+                    // Show only the required potion properties
+                    if (!Object.hasOwn(SHOW_POTION_PROPERTIES, key))
+                        return null;
+
                     return (
                         <PotionDetailAccordion
                             key={index}

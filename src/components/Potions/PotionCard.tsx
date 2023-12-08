@@ -1,4 +1,3 @@
-import React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -21,37 +20,17 @@ type Props = {
 const PotionCard = (props: Props) => {
     const { potion } = props;
     return (
-        <Card
-            sx={{
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-            }}
-        >
+        <Card className="flex h-full flex-col justify-between">
             <CardMedia
                 component={'img'}
                 image={potion.image}
                 alt={potion.name}
-                sx={{
-                    maxWidth: '100%',
-                    height: '250px',
-                    objectFit: 'cover',
-                    transition: 'transform 500ms',
-                    ':hover': {
-                        transform: 'scale(1.1)',
-                    },
-                }}
+                className={`max-w-full h-[250px] object-cover transition-transform
+                     duration-500 hover:transfom hover:scale-110`}
             />
 
-            <CardContent sx={{ flex: '1' }}>
-                <List
-                    sx={{
-                        width: '100%',
-                        maxWidth: 360,
-                        bgcolor: 'background.paper',
-                    }}
-                >
+            <CardContent className="flex-1">
+                <List className="w-full max-w-[360px]">
                     <ListItem>
                         <ListItemText primary="Name" secondary={potion.name} />
                     </ListItem>
@@ -80,7 +59,7 @@ const PotionCard = (props: Props) => {
             </CardContent>
 
             <CardActions>
-                <Link href={`/${potion.slug}`} style={{ width: '100%' }}>
+                <Link href={`/${potion.slug}`} className="w-full">
                     <Button variant="contained" size="medium" fullWidth>
                         View Potion Details
                     </Button>

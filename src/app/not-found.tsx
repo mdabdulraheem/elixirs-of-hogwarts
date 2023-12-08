@@ -1,16 +1,9 @@
 import { Button } from '@mui/material';
 import Link from 'next/link';
-import React from 'react';
 
 const NotFound = () => {
     return (
-        <div
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-            }}
-        >
+        <div className="flex flex-col items-center">
             <h5>404 | Page not found.</h5>
             <Link href="/">
                 <Button variant="outlined" size="large">

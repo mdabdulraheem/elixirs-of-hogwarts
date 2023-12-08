@@ -1,4 +1,3 @@
-import React from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 
@@ -6,12 +5,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 const loading = () => {
     return (
         <div>
-            <Backdrop
-                sx={{
-                    color: '#fff',
-                }}
-                open={true}
-            >
+            <Backdrop className="text-white" open={true}>
                 <CircularProgress color="inherit" />
             </Backdrop>
         </div>

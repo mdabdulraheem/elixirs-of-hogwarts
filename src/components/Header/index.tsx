@@ -1,7 +1,6 @@
 import { AppBar, Box, Container, Typography } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 
 const index = () => {
     return (
@@ -9,13 +8,7 @@ const index = () => {
             <Container>
                 <Link
                     href="/"
-                    style={{
-                        padding: '1.5rem 0',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        textDecoration: 'none',
-                        color: '#fff',
-                    }}
+                    className="py-[1.5rem] inline-flex items-center no-underline text-white"
                 >
                     <Image
                         width={48}
@@ -24,7 +17,7 @@ const index = () => {
                         alt={'Potions'}
                     />
                     <Box>
-                        <Typography variant="h4" fontWeight="bold">
+                        <Typography variant="h4" className="font-bold">
                             Elixirs of Hogwarts
                         </Typography>
                         <Typography variant="body2">

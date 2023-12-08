@@ -1,4 +1,4 @@
-import React, { BaseSyntheticEvent, useEffect, useState } from 'react';
+import { BaseSyntheticEvent, useEffect, useState } from 'react';
 import {
     Popover,
     List,
@@ -102,7 +102,7 @@ const Filter = (props: Props) => {
                 }}
                 disableScrollLock={true}
             >
-                <List sx={{ minWidth: '250px', paddingBottom: 0 }} dense>
+                <List className="min-w-[250px] pb-0" dense>
                     <ListSubheader>Filter By</ListSubheader>
                     <Divider />
                     {data.map((category, index) => (
@@ -115,12 +115,7 @@ const Filter = (props: Props) => {
                                 <Typography>{category.name}</Typography>
                             </AccordionSummary>
 
-                            <AccordionDetails
-                                sx={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                }}
-                            >
+                            <AccordionDetails className="flex flex-col">
                                 {category.options.map((option, index2) => (
                                     <FormControlLabel
                                         key={index2}
@@ -145,12 +140,12 @@ const Filter = (props: Props) => {
                     ))}
                 </List>
 
-                <Box sx={{ textAlign: 'center' }}>
+                <Box className="text-center">
                     <Button
                         onClick={handleApply}
                         variant="contained"
                         size="small"
-                        sx={{ margin: '1rem' }}
+                        className="m-[1rem]"
                     >
                         Apply Filters
                     </Button>

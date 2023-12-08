@@ -9,22 +9,14 @@ export default function GlobalError({
     reset: () => void;
 }) {
     useEffect(() => {
-        console.error(error);
+        console.error('Global error:: ', error);
     }, [error]);
 
     return (
         <html>
             <body>
-                <div
-                    style={{
-                        width: '100%',
-                        height: '100%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                    }}
-                >
-                    <p color="warn">Oops, something went wrong.</p>
+                <div className="w-full h-full flex items-center justify-center">
+                    <p>Oops, something went wrong.</p>
                     <button onClick={() => reset()}>Try again.</button>
                 </div>
             </body>
